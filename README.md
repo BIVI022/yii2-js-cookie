@@ -1,4 +1,9 @@
-# JavaScript Cookie [![Build Status](https://travis-ci.org/js-cookie/js-cookie.svg?branch=master)](https://travis-ci.org/js-cookie/js-cookie) [![Code Climate](https://codeclimate.com/github/js-cookie/js-cookie.svg)](https://codeclimate.com/github/js-cookie/js-cookie)
+# Yii2 JavaScript Cookie
+
+Forked from [js-cookie](https://github.com/js-cookie/js-cookie) with injecting [js-php-unserialize](https://github.com/naholyr/js-php-unserialize)
+
+Added support for reading cookies protected by Yii2.
+
 
 A simple, lightweight JavaScript API for handling cookies
 
@@ -30,9 +35,20 @@ Include the script (unless you are packaging scripts somehow else):
 **Do not include the script directly from GitHub (http://raw.github.com/...).** The file is being served as text/plain and as such being blocked
 in Internet Explorer on Windows 7 for instance (because of the wrong MIME type). Bottom line: GitHub is not a CDN.
 
-js-cookie supports [npm](https://www.npmjs.com/package/js-cookie) and [Bower](http://bower.io/search/?q=js-cookie) under the name `js-cookie`
+yii2-js-cookie supports [Bower](http://bower.io/search/?q=yii2-js-cookie) under the name `yii2-js-cookie`
 
 It can also be loaded as an AMD or CommonJS module.
+
+## Yii2 Protected cookies examples
+
+*You can't set protected cookies in JS because of impletation of signing algorithm will be insecure on the client side*
+
+```javascript
+Cookies.getProtected('name'); // => 'value'
+Cookies.getProtected(); // => { unprotected_cookie: 'value', protected_cookie: 'value' }
+Cookies.remove('name');
+```
+
 
 ## Basic Usage
 
