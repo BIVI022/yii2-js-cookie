@@ -1,5 +1,5 @@
 {
-  "name": "js-cookie",
+  "name": "yii2-js-cookie",
   "main": [
     "src/js.cookie.js"
   ],
